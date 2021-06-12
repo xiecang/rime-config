@@ -2,4 +2,5 @@
 -- 详见 `lua/select_character.lua`
 
 -- 需要以词定字插件打开第5行注释
--- select_character_processor = require("select_character")
+select_character_processor = require("select_character")
+date_translator = require("date")

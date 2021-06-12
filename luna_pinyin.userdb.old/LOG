@@ -1,0 +1,7 @@
+2021/05/20-11:28:16.316004 140465681057536 Log #664: 42 ops saved to Table #665 OK
+2021/05/20-11:28:16.316142 140465681057536 Archiving /home/xc/.config/fcitx/rime/luna_pinyin.userdb/000664.log: OK
+2021/05/20-11:28:16.316251 140465681057536 Table #663: 1268 entries OK
+2021/05/20-11:28:16.316961 140465681057536 Table #661: 6030 entries OK
+2021/05/20-11:28:16.316987 140465681057536 Table #665: 42 entries OK
+2021/05/20-11:28:16.317097 140465681057536 Archiving /home/xc/.config/fcitx/rime/luna_pinyin.userdb/MANIFEST-000662: OK
+2021/05/20-11:28:16.330780 140465681057536 **** Repaired leveldb /home/xc/.config/fcitx/rime/luna_pinyin.userdb; recovered 3 files; 198029 bytes. Some data may have been lost. ****

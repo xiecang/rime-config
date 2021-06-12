@@ -141,7 +141,7 @@ patch:
     - name: ascii_punct
       states: [ 。，, ．， ]
   engine/translators:
-    # - lua_translator@date_translator
+    - lua_translator@date_translator
     # - lua_translator@week_translator
     - punct_translator
     - script_translator

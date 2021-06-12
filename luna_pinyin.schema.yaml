@@ -101,6 +101,8 @@ punctuator:
 
 key_binder:
   import_preset: default
+  select_first_character: 'comma'
+  select_last_character: 'period'
 
 recognizer:
   import_preset: default
