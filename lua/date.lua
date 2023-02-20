@@ -19,7 +19,8 @@ translator 的输出是若干候选项。
 
 local function translator(input, seg)
     -- 如果输入串为 `date` 则翻译
-    if (input == "sj") then
+    -- if (input == "sj") then
+    if (input == "date") then
        --[[ 用 `yield` 产生一个候选项
             候选项的构造函数是 `Candidate`，它有五个参数：
              - type: 字符串，表示候选项的类型
