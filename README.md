@@ -192,5 +192,44 @@
   6. [easy-en](https://github.com/BlindingDark/rime-easy-en)
   7. [Rime](https://github.com/alswl/Rime)
   8. [rime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)
-  
-  
+  9. [rime-ice](https://github.com/iDvel/rime-ice)
+
+### 手动安装
+
+将仓库所有文件复制粘贴进去就好了。
+
+更新词库，手动覆盖 `cn_dicts` `en_dcits` `opencc` 三个文件夹。
+
+### 东风破 [plum](https://github.com/rime/plum)
+
+所有配方（`others/recipes/*.recipe.yaml`）只是简单地更新覆盖文件，适合更新词库时使用。后四个配方只是更新词库文件，并不更新 `rime_ice.dict.yaml` 和 `melt_eng.dict.yaml`，因为用户可能会挂载其他词库。如果更新后部署时报错，可能是增、删、改了文件，需要检查上面两个文件和词库的对应关系。
+
+安装或更新：全部文件
+
+```
+bash rime-install iDvel/rime-ice:others/recipes/full
+```
+
+安装或更新：所有词库文件（包含下面三个）
+
+```
+bash rime-install iDvel/rime-ice:others/recipes/all_dicts
+```
+
+安装或更新：拼音词库文件
+
+```
+bash rime-install iDvel/rime-ice:others/recipes/cn_dicts
+```
+
+安装或更新：英文词库文件
+
+```
+bash rime-install iDvel/rime-ice:others/recipes/en_dicts
+```
+
+安装或更新：opencc(emoji)
+
+```
+bash rime-install iDvel/rime-ice:others/recipes/opencc
+```
