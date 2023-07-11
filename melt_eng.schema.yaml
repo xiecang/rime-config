@@ -46,8 +46,8 @@ speller:
   delimiter: " '"
   algebra:
     # 根据当前所用中文方案修改 __include 的值
-    # algebra_rime_ice | algebra_double | algebra_flypy | algebra_mspy | algebra_abc | algebra_ziguang
-    __include: algebra_double
+    # algebra_rime_ice | algebra_double_pinyin | algebra_flypy | algebra_mspy | algebra_abc | algebra_ziguang
+    __include: algebra_double_pinyin
     __append:
       # 数字派生
       - derive/1([4-7|9])/$1teen/
