@@ -1,10 +1,8 @@
 *~
 .*~
-/luna_pinyin.userdb/*
-/easy_en.userdb/*
-/rime_ice.userdb/*
+*.userdb/*
 /build/*
 /user.yaml
-/installation.yaml
+installation.yaml
 opencc/.DS_Store
 .DS_Store
