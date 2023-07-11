@@ -269,8 +269,7 @@ QQ邮箱	qqyzxl
 什么啊	sma
 
 
-Go	go	2
-go	go	1
+go	go
 Golang	golang
 Hugo	hugo
 goto	goto

@@ -13,15 +13,14 @@ config_version: '2023-05-09'
 schema_list:
   # - schema: rime_ice
   - schema: double_pinyin
-  - schema: double_pinyin_flypy
+  - schema: double_pinyin_abc
   - schema: double_pinyin_mspy
+  - schema: double_pinyin_flypy
   - schema: double_pinyin_ziguang
 #switcher/hotkeys:
 #  - "Control+grave" # 注意是control+`，不是command+`
-menu/page_size: 8
 
-
-# 菜单「方案选单」
+# 菜单
 menu:
   page_size: 8  # 候选词个数
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
@@ -129,7 +128,7 @@ punctuator:
     ':' : '：'
     #    '''' : { pair: [ '‘', '’' ] }
     '''': { pair: ["「", "」"] }
-    #    '"' : { pair: [ '“', '”' ] }
+    '"' : { pair: [ '“', '”' ] }
     '\' : '、'
     '|' : '|'
     '`' : '`'
@@ -178,11 +177,11 @@ key_binder:
 
   bindings:
     # Tab / Shift+Tab 切换光标至下/上一个拼音
-    # - { when: composing, accept: Shift+Tab, send: Shift+Left }
-    # - { when: composing, accept: Tab, send: Shift+Right }
+    - { when: composing, accept: Shift+Tab, send: Shift+Left }
+    - { when: composing, accept: Tab, send: Shift+Right }
     # Tab / Shift+Tab 翻页
-    - { when: has_menu, accept: Shift+Tab, send: Page_Up }
-    - { when: has_menu, accept: Tab, send: Page_Down }
+    # - { when: has_menu, accept: Shift+Tab, send: Page_Up }
+    # - { when: has_menu, accept: Tab, send: Page_Down }
 
     # Option/Alt + ←/→ 切换光标至下/上一个拼音
     - { when: composing, accept: Alt+Left, send: Shift+Left }

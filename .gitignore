@@ -2,6 +2,7 @@
 .*~
 /luna_pinyin.userdb/*
 /easy_en.userdb/*
+/rime_ice.userdb/*
 /build/*
 /user.yaml
 /installation.yaml
