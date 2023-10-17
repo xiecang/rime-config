@@ -1,7 +1,8 @@
 patch:
   style:
     #
-    color_scheme: ayaya
+    # color_scheme: ayaya
+    color_scheme: WeChat-keyboard
     color_scheme_dark: solarized_dark
 
     font_face: "Segoe UI Emoji:80, Microsoft YaHei" # 默认字体。为了保证部分 emoji 能正常显示，建议将 emoji 字体放在首位，并指定起始码位防止影响其他字符。refer <https://github.com/rime/weasel/issues/932>
