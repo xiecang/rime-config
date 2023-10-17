@@ -18,70 +18,11 @@
 # 比如 Amazon 被纠错为「a ma zong 阿妈粽」，
 # 期望的 Amazon 跑到第二个候选项了，所以这里给它固定死喽。
 #
-# version: "2023-04-08"
+# version: "2023-08-15"
 #
 # 此行之后不能写注释
 
-又双叒叕	yyy
-Rime	rime	3
-⌘	cmd
-⌃	ctl
-⌥	opt
-⇧	shift
-GBK	gbk
-UTF-8	utfba
-macOS High Sierra	macos	2
-macOS Mojave	macos	3
-macOS	macos	4
-Google Analytics	ga
-macOS	macos
-Linux	linux
-CSS	css
-HTML html
-iOS	ios
-iPad	ipad
-iPhone	iphone
-iTunes	itunes
-JavaScript js
-TypeScript ts
-jQuery	jquery
-MySQL	mysql
-SQL	sql
-Objective-C	ojbc
-Ruby	ruby
-Rust	rust
-WeChat	wechat
-Swift	swift
-MacBook Pro	mbp
-MacBook	macbook
-Apple	apple
-GitHub	github
-iMac	imac
-iPad	ipad
-iPhone	iphone
-iPod	ipod
-IPTV	iptv
-IPv4	ipv
-IPv6	ipv
-Mac App Store	mas
-OS X	osx
-GNU/Linux	linux
-X-Ray	xray
-Xbox One	xbox
-Youku	youku
-YouTube	youtube
-又双叒叕	yzyz
-iCloud	icloud
-Quantumult	quan
-Dropbox	dropbox
-T恤	txu
-Mac	mac
-Wi-Fi	wifi
-Apple ID	appleid
-QQ邮箱	qqyzxl
 
-
-欻	chua
 噷	hm
 哼	hng
 
