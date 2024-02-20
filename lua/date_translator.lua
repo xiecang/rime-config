@@ -35,7 +35,7 @@ function M.func(input, seg, env)
         yield_cand(seg, os.date('%H:%M', current_time))
         yield_cand(seg, os.date('%H:%M:%S', current_time))
         -- timestamp
-        yield_cand(seg, current_time)
+        yield_cand(seg, string.format('%d', current_time))
 
     -- 星期
     elseif (input == M.week) then
