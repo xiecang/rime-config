@@ -17,7 +17,7 @@ function M.init(env)
     M.week = config:get_string(env.name_space .. '/week') or 'xq'
     M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
     M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
-    M.bak = config:get_string(env.name_space .. '/bak') or 'bak'
+M.bak = config:get_string(env.name_space .. '/bak') or 'bak'
 end
 
 function M.func(input, seg, env)
@@ -35,7 +35,7 @@ function M.func(input, seg, env)
         local current_time = os.time()
         yield_cand(seg, os.date('%H:%M', current_time))
         yield_cand(seg, os.date('%H:%M:%S', current_time))
-        -- timestamp
+-- timestamp
         yield_cand(seg, string.format('%d', current_time))
 
     -- 星期
