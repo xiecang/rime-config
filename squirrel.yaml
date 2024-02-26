@@ -1,5 +1,6 @@
 # Squirrel settings
 # encoding: utf-8
+# 修改自: https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
 #
 # squirrel[.custom].yaml 是鼠须管的前端配置文件，小狼毫是 weasel[.custom].yaml
 # 各平台皮肤配置并不一致。
@@ -9,18 +10,20 @@
 # 鼠须管作者写的图形化的皮肤设计器： https://github.com/LEOYoon-Tsaw/Squirrel-Designer
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2023-02-27'
+config_version: '2024-02-26'
 
+# 可用选项：last | default | _custom_
+# last：上次使用的拉丁字母键盘布局
+# default：美国（ABC）键盘布局
+# _custom_：键盘布局，例如 'com.apple.keylayout.USExtended' 或简写的 'USExtended'
+keyboard_layout: last
 
-# options: last | default | _custom_
-# last: the last used latin keyboard layout
-# default: US (ABC) keyboard layout
-# _custom_: keyboard layout of your choice, e.g. 'com.apple.keylayout.USExtended' or simply 'USExtended'
-keyboard_layout: default
-# for veteran chord-typist
-chord_duration: 0.1  # seconds
+# 给打字贼快的家伙们设置的按键持续时间（
+chord_duration: 0.1 # seconds
+
 # options: always | never | appropriate
 show_notifications_when: appropriate
+show_notifications_via_notification_center: true
 
 
 # ascii_mode、inline、no_inline、vim_mode 等等设定
@@ -84,13 +87,14 @@ app_options:
     ascii_mode: true
 
 style:
-  # 选择皮肤，亮色与暗色主题
-  color_scheme: apathy
-  # color_scheme: wechat_light
-  color_scheme_dark: wechat_dark
+  color_scheme: ayaya # 主题方案
+  # color_scheme: reimu
+  color_scheme_dark: reimu_dark # 指定深色模式时输入法所使用的主题方案
+  translucency: true # 背景半透明总开关，不需要关掉即可
 
-  # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
-  text_orientation: horizontal  # horizontal | vertical
+  # 以下为鼠须管默认设置
+  # candidate_list_layout: stacked  # stacked | linear
+  text_orientation: horizontal # horizontal | vertical
   inline_preedit: true
   corner_radius: 10
   hilited_corner_radius: 0
@@ -98,18 +102,492 @@ style:
   border_width: 0
   line_spacing: 5
   spacing: 10
-  #candidate_format: '%c. %@'
-  #base_offset: 6
-  font_face: 'Lucida Grande'
+  # candidate_format: '%c. %@'
+  # base_offset: 6 # 竖排文字的基线调整
+  font_face: "Lucida Grande"
   font_point: 21
-  #label_font_face: 'Lucida Grande'
+  # label_font_face: 'Lucida Grande'
   label_font_point: 18
-  #comment_font_face: 'Lucida Grande'
+  # comment_font_face: 'Lucida Grande'
   comment_font_point: 18
-
 
 # 皮肤列表
 preset_color_schemes:
+  # https://github.com/LufsX/rime/blob/master/squirrel.yaml
+  ayaya:
+    name: "文文／Ayaya"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 16.5
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 12
+
+    candidate_format: "%c\u2005%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 5
+    hilited_corner_radius: 0
+    border_height: 0
+    border_width: 0
+    alpha: 0.95
+    shadow_size: 0
+
+    color_space: display_p3
+    back_color: 0xFFFFFF
+    border_color: 0xECE4FC
+    candidate_text_color: 0x121212
+    comment_text_color: 0x8E8E8E
+    label_color: 0x888785
+    hilited_candidate_back_color: 0xECE4FC
+    hilited_candidate_text_color: 0x7A40EC
+    hilited_comment_text_color: 0x8E8E8E
+    hilited_candidate_label_color: 0xB18FF4
+    text_color: 0x8100EB
+    hilited_text_color: 0xD8000000
+
+  ayaya_dark:
+    name: "文文／Ayaya／深色"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 16.5
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 12
+
+    candidate_format: "%c\u2005%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 5
+    hilited_corner_radius: 0
+    border_height: 0
+    border_width: 0
+    alpha: 0.95
+    shadow_size: 0
+
+    color_space: display_p3
+    back_color: 0x000000
+    border_color: 0xECE4FC
+    candidate_text_color: 0xD2D2D2
+    comment_text_color: 0x8E8E8E
+    label_color: 0x888785
+    hilited_candidate_back_color: 0x2C1E3C
+    hilited_candidate_text_color: 0x7036E2
+    hilited_comment_text_color: 0x8E8E8E
+    hilited_candidate_label_color: 0x7036E2
+    text_color: 0x8100EB
+    hilited_text_color: 0xD8000000
+
+  reimu:
+    name: "灵梦／Reimu"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 17
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 14
+
+    candidate_format: "%c\u2005%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: 6
+    border_height: 1
+    border_width: 1
+    alpha: 0.95
+    shadow_size: 2
+
+    color_space: display_p3
+    back_color: 0xF5FCFD
+    candidate_text_color: 0x282C32
+    comment_text_color: 0x717172
+    label_color: 0x888785
+    hilited_candidate_back_color: 0xF5FCFD
+    hilited_candidate_text_color: 0x4F00E5
+    hilited_comment_text_color: 0x9F9CF2
+    hilited_candidate_label_color: 0x4F00E5
+    text_color: 0x6B54E9
+    hilited_text_color: 0xD8000000
+
+  reimu_dark:
+    name: "灵梦／Reimu／深色"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 17
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 14
+
+    candidate_format: "%c\u2005%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: 6
+    border_height: 1
+    border_width: 1
+    alpha: 0.95
+    shadow_size: 2
+
+    color_space: display_p3
+    back_color: 0x020A00
+    border_color: 0x020A00
+    candidate_text_color: 0xC0C0C0
+    comment_text_color: 0x717172
+    label_color: 0x717172
+    hilited_candidate_back_color: 0x0C140A
+    hilited_candidate_text_color: 0x3100C7
+    hilited_comment_text_color: 0x7772AF
+    hilited_candidate_label_color: 0x3100C7
+    text_color: 0x6B54E9
+    hilited_text_color: 0xD8000000
+
+  apathy:
+    name: "冷漠／Apathy"
+    author: LIANG Hai
+
+    font_face: "PingFangSC-Regular"
+    font_point: 16
+    label_font_face: "STHeitiSC-Light"
+    label_font_point: 12
+
+    candidate_format: "%c\u2005%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 5
+
+    alpha: 0.95
+    color_space: srgb
+    back_color: 0xFFFFFF
+    candidate_text_color: 0xD8000000
+    comment_text_color: 0x999999
+    label_color: 0xE5555555
+    hilited_candidate_back_color: 0xFFF0E4
+    hilited_candidate_text_color: 0xEE6E00
+    hilited_comment_text_color: 0x999999
+    hilited_candidate_label_color: 0xF4994C
+    text_color: 0x424242
+    hilited_text_color: 0xD8000000
+
+  win10:
+    name: "WIN10"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 16.5
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 12
+
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 0
+    hilited_corner_radius: -6
+    border_height: 7
+    border_width: 6
+    spacing: 10
+
+    color_space: srgb
+    back_color: 0xFFFFFF
+    candidate_text_color: 0x000000
+    comment_text_color: 0x888888
+    label_color: 0x888888
+    hilited_candidate_back_color: 0xCC8F29
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0xFFFFFF
+    hilited_candidate_label_color: 0xEEDAB8
+    text_color: 0x000000
+    hilited_back_color: 0xFFFFFF
+    hilited_text_color: 0x000000
+
+  win10_ayaya:
+    name: "WIN10／文文／Ayaya"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "LXGWWenKai-Regular, PingFangSC"
+    font_point: 16.5
+    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+    label_font_point: 12
+
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 0
+    hilited_corner_radius: -6
+    border_height: 7
+    border_width: 6
+    spacing: 10
+
+    color_space: display_p3
+    back_color: 0xFFFFFF
+    border_color: 0xFFFFFF
+    candidate_text_color: 0x121212
+    comment_text_color: 0x8E8E8E
+    label_color: 0x888785
+    hilited_candidate_back_color: 0xECE4FC
+    hilited_candidate_text_color: 0x7A40EC
+    hilited_comment_text_color: 0x8E8E8E
+    hilited_candidate_label_color: 0xB18FF4
+    text_color: 0x8100EB
+    hilited_text_color: 0xD8000000
+
+  macos12_light:
+    name: "高仿亮色 macOS"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "PingFangSC-Regular"
+    font_point: 15
+    label_font_face: "PingFangSC-Regular"
+    label_font_point: 12
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 13
+
+    candidate_format: "%c\u2004%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: 6
+    border_width: 2
+    line_spacing: 1
+
+    color_space: display_p3
+    back_color: 0xFFFFFF
+    border_color: 0xFFFFFF
+    candidate_text_color: 0xD8000000
+    comment_text_color: 0x3F000000
+    label_color: 0x7F7F7F
+    hilited_candidate_back_color: 0xD05925
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0x808080
+    hilited_candidate_label_color: 0xFFFFFF
+    text_color: 0x3F000000
+    hilited_text_color: 0xD8000000
+
+  macos12_dark:
+    name: "高仿暗色 macOS"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "PingFangSC-Regular"
+    font_point: 15
+    label_font_face: "PingFangSC-Regular"
+    label_font_point: 12
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 13
+
+    candidate_format: "%c\u2004%@"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: 6
+    border_width: 2
+    line_spacing: 1
+
+    color_space: display_p3
+    back_color: 0x1E1F24
+    border_color: 0x1E1F24
+    candidate_text_color: 0xE8E8E8
+    comment_text_color: 0x3F000000
+    label_color: 0x7C7C7C
+    hilited_candidate_back_color: 0xDA6203
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0x808080
+    hilited_candidate_label_color: 0xFFE7D6
+    text_color: 0x3F000000
+    hilited_text_color: 0xD8000000
+
+  # wechat:
+  #   name: "高仿微信输入法"
+  #   author: "Lufs X <i@isteed.cc>"
+
+  #   font_face: "PingFangSC-Regular"
+  #   font_point: 15
+  #   label_font_face: "PingFangSC-Regular"
+  #   label_font_point: 12
+  #   comment_font_face: "PingFangSC-Regular"
+  #   comment_font_point: 12
+
+  #   candidate_format: "%c\u2005%@"
+  #   candidate_list_layout: linear
+  #   text_orientation: horizontal
+  #   inline_preedit: true
+
+  #   corner_radius: 7
+  #   hilited_corner_radius: 7
+  #   border_height: -2
+
+  #   color_space: display_p3
+  #   back_color: 0xFFFFFF
+  #   border_color: 0xFFFFFF
+  #   candidate_text_color: 0x444444
+  #   comment_text_color: 0x8E8E8E
+  #   label_color: 0x888785
+  #   hilited_candidate_back_color: 0x7BAE4F
+  #   hilited_candidate_text_color: 0xFFFFFF
+  #   hilited_comment_text_color: 0xF0F0F0
+  #   hilited_candidate_label_color: 0xFFFFFF
+  #   text_color: 0xFFFFFF
+  #   hilited_text_color: 0xD8000000
+
+  # wechat_dark:
+  #   name: "高仿暗色微信输入法"
+  #   author: "Lufs X <i@isteed.cc>"
+
+  #   font_face: "PingFangSC-Regular"
+  #   font_point: 15
+  #   label_font_face: "PingFangSC-Regular"
+  #   label_font_point: 12
+  #   comment_font_face: "PingFangSC-Regular"
+  #   comment_font_point: 12
+
+  #   candidate_format: "%c\u2005%@"
+  #   candidate_list_layout: linear
+  #   text_orientation: horizontal
+  #   inline_preedit: true
+
+  #   corner_radius: 7
+  #   hilited_corner_radius: 7
+  #   border_height: -2
+
+  #   color_space: display_p3
+  #   back_color: 0x151515
+  #   border_color: 0x151515
+  #   candidate_text_color: 0xB9B9B9
+  #   comment_text_color: 0x8E8E8E
+  #   label_color: 0x888785
+  #   hilited_candidate_back_color: 0x74A54B
+  #   hilited_candidate_text_color: 0xFFFFFF
+  #   hilited_comment_text_color: 0xF0F0F0
+  #   hilited_candidate_label_color: 0xFFFFFF
+  #   text_color: 0xFFFFFF
+  #   hilited_text_color: 0x777777
+
+  macos14:
+    name: "高仿 macOS 14"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "PingFangSC-Regular"
+    font_point: 16
+    label_font_face: "PingFangSC-Regular"
+    label_font_point: 8
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 13
+
+    candidate_format: "%c\u2003\u2003\u2003%@\u2004\u2001"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: -1
+    border_height: -4
+    border_width: 2
+
+    color_space: display_p3
+    back_color: 0xE7E8EA
+    border_color: 0xE7E8EA
+    candidate_text_color: 0x464647
+    comment_text_color: 0x3F000000
+    label_color: 0x7F7F7F
+    hilited_candidate_back_color: 0xD05925
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0xDCDCDC
+    hilited_candidate_label_color: 0xFFFFFF
+    text_color: 0x3F000000
+    hilited_text_color: 0xD8000000
+
+  macos14_dark:
+    name: "高仿暗色 macOS 14"
+    author: "Lufs X <i@isteed.cc>"
+
+    font_face: "PingFangSC-Regular"
+    font_point: 16
+    label_font_face: "PingFangSC-Regular"
+    label_font_point: 8
+    comment_font_face: "PingFangSC-Regular"
+    comment_font_point: 13
+
+    candidate_format: "%c\u2003\u2003\u2003%@\u2004\u2001"
+    candidate_list_layout: linear
+    text_orientation: horizontal
+    inline_preedit: true
+
+    corner_radius: 7
+    hilited_corner_radius: -1
+    border_height: -4
+    border_width: 2
+
+    color_space: display_p3
+    back_color: 0x555557
+    border_color: 0x0C0C0C
+    candidate_text_color: 0xEEEEEE
+    comment_text_color: 0x80FFFFFF
+    label_color: 0x7C7C7C
+    hilited_candidate_back_color: 0xCA5824
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0xF0F0F0
+    hilited_candidate_label_color: 0xFFFFFF
+    text_color: 0x3F000000
+    hilited_text_color: 0xD8000000
+
+  # 各个设置项的简要作用说明
+  # 以下出现的颜色均为 16 进制色值，(A)BGR顺序
+  ## alpha: 透明度
+  ## back_color: 候选条背景色
+  ## base_offset: 候选框与输入框的垂直偏移量
+  ## border_color: 边框颜色
+  ## border_color_width: 输入条边框宽度
+  ## border_height: 窗口上下高度
+  ## border_width: 窗口左右宽度
+  ## candidate_format: 候选格式
+  ## candidate_spacing: 候选字间隔
+  ## candidate_text_color: 预选项文字颜色
+  ## color_space: 颜色空间
+  ## comment_font_face: 拼音等提示文字字体
+  ## comment_font_point: 拼音等提示文字字号
+  ## comment_text_color: 拼音等提示文字颜色
+  ## corner_radius: 候选条圆角
+  ## font_face: 候选词字体
+  ## font_point: 候选字词大小
+  ## hilite_padding: 候选字背景色色块高度
+  ## hilited_back_color: 第一候选项背景背景色
+  ## hilited_candidate_back_color: 候选文字背景色
+  ## hilited_candidate_label_color: 第一候选项编号颜色
+  ## hilited_candidate_text_color: 第一候选项文字颜色
+  ## hilited_comment_text_color: 注解文字高亮颜色
+  ## hilited_corner_radius: 高亮圆角
+  ## hilited_label_color: 已选字的数字颜色
+  ## hilited_text_color: 高亮拼音颜色
+  ## horizontal: 是否水平排列（鼠须管 0.15 以后已弃用）
+  ## inline_preedit: 是否单行显示
+  ## label_color: 预选栏编号颜色
+  ## label_font_face: 候选词编号字体
+  ## label_font_point: 候选编号大小
+  ## label_format: 候选编号格式
+  ## line_spacing: 行间距
+  ## margin_x: 字左右边距
+  ## margin_y: 字上下边距
+  ## min_height: 最小高度
+  ## min_width: 最小宽度
+  ## round_corner: 候选字背景色块圆角幅度
+  ## spacing: 间距
+  ## text_color: 高亮选中词颜色
+
+
   # 对 purity_of_form 略微调整颜色，让色彩更柔和点，补全其他选项和注释
   purity_of_form_custom:
     name: "純粹的形式／Purity of Form Custom"
@@ -182,7 +660,6 @@ preset_color_schemes:
 
   # 下面是内置的皮肤 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
 
-
   native:
     name: 系統配色
 
@@ -208,56 +685,6 @@ preset_color_schemes:
     hilited_candidate_text_color: 0x7ffeff
     hilited_candidate_back_color: 0x00000000
     comment_text_color: 0xc69664
-
-  luna:
-
-  lost_temple:
-    name: 孤寺／Lost Temple
-    author: 佛振 <chen.sst@gmail.com>, based on ir_black
-    text_color: 0xe8f3f6
-    back_color: 0xee303030
-    hilited_text_color: 0x82e6ca
-    hilited_candidate_text_color: 0x000000
-    hilited_candidate_back_color: 0x82e6ca
-    comment_text_color: 0xbb82e6ca
-    hilited_comment_text_color: 0xbb203d34
-
-  dark_temple:
-    name: 暗堂／Dark Temple
-    author: 佛振 <chen.sst@gmail.com>, based on ir_black
-    text_color: 0x92f6da
-    back_color: 0x222222
-    candidate_text_color: 0xd8e3e6
-    hilited_text_color: 0xffcf9a
-    hilited_back_color: 0x222222
-    hilited_candidate_text_color: 0x92f6da
-    hilited_candidate_back_color: 0x10000000  # 0x333333
-    comment_text_color: 0x606cff
-
-  purity_of_form:
-    name: 純粹的形式／Purity of Form
-    author: 雨過之後、佛振
-    text_color: 0xc2c2c2
-    back_color: 0x444444
-    candidate_text_color: 0xeeeeee
-    hilited_text_color: 0xeeeeee
-    hilited_back_color: 0x444444
-    hilited_candidate_text_color: 0x000000
-    hilited_candidate_back_color: 0xfafafa
-    comment_text_color: 0x808080
-
-  purity_of_essence:
-    name: 純粹的本質／Purity of Essence
-    author: 佛振
-    text_color: 0x2c2ccc
-    back_color: 0xfafafa
-    candidate_text_color: 0x000000
-    hilited_text_color: 0x000000
-    hilited_back_color: 0xfafafa
-    hilited_candidate_text_color: 0xeeeeee
-    hilited_candidate_back_color: 0x444444
-    comment_text_color: 0x808080
-
 
   clean_white:
     name: 简约白／Clean White
