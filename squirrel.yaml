@@ -10,7 +10,7 @@
 # 鼠须管作者写的图形化的皮肤设计器： https://github.com/LEOYoon-Tsaw/Squirrel-Designer
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2024-02-26'
+config_version: '2023-02-27'
 
 # 可用选项：last | default | _custom_
 # last：上次使用的拉丁字母键盘布局
@@ -87,14 +87,14 @@ app_options:
     ascii_mode: true
 
 style:
-  color_scheme: solarized # 主题方案
-  # color_scheme: reimu
+  # color_scheme: solarized # 主题方案
+  color_scheme: reimu
   color_scheme_dark: reimu_dark # 指定深色模式时输入法所使用的主题方案
   translucency: true # 背景半透明总开关，不需要关掉即可
 
-  # 以下为鼠须管默认设置
+  # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
   # candidate_list_layout: stacked  # stacked | linear
-  text_orientation: horizontal # horizontal | vertical
+  text_orientation: horizontal  # horizontal | vertical
   inline_preedit: true
   corner_radius: 10
   hilited_corner_radius: 0
@@ -110,6 +110,7 @@ style:
   label_font_point: 18
   # comment_font_face: 'Lucida Grande'
   comment_font_point: 18
+
 
 # 皮肤列表
 preset_color_schemes:
@@ -253,12 +254,12 @@ preset_color_schemes:
     name: "冷漠／Apathy"
     author: LIANG Hai
 
-    font_face: "PingFangSC-Regular"
+    font_face: "PingFangSC-Regular,HanaMinB"  # 候选词字体
     font_point: 16
-    label_font_face: "STHeitiSC-Light"
-    label_font_point: 12
+    label_font_face: "STHeitiSC-Light" # 候选词编号字体
+    label_font_point: 12  # 候选编号大小
 
-    candidate_format: "%c\u2005%@"
+    candidate_format: "%c\u2005%@\u2005"  # 编号 %c 和候选词 %@ 前后的空间
     candidate_list_layout: linear
     text_orientation: horizontal
     inline_preedit: true
@@ -267,48 +268,48 @@ preset_color_schemes:
 
     alpha: 0.95
     color_space: srgb
-    back_color: 0xFFFFFF
+    back_color: 0xFFFFFF # 候选条背景色
     candidate_text_color: 0xD8000000
-    comment_text_color: 0x999999
+    comment_text_color: 0x999999  # 拼音等提示文字颜色
     label_color: 0xE5555555
-    hilited_candidate_back_color: 0xFFF0E4
-    hilited_candidate_text_color: 0xEE6E00
+    hilited_candidate_back_color: 0xFFF0E4 # 候选文字背景色
+    hilited_candidate_text_color: 0xEE6E00 # 候选文字颜色
     hilited_comment_text_color: 0x999999
     hilited_candidate_label_color: 0xF4994C
-    text_color: 0x424242
+    text_color: 0x424242   #高亮选中词颜色
     hilited_text_color: 0xD8000000
 
-  win10:
-    name: "WIN10"
-    author: "Lufs X <i@isteed.cc>"
-
-    font_face: "LXGWWenKai-Regular, PingFangSC"
-    font_point: 16.5
-    label_font_face: "LXGWWenKai-Regular, PingFangSC"
-    label_font_point: 12
-
-    candidate_list_layout: linear
-    text_orientation: horizontal
-    inline_preedit: true
-
-    corner_radius: 0
-    hilited_corner_radius: -6
-    border_height: 7
-    border_width: 6
-    spacing: 10
-
-    color_space: srgb
-    back_color: 0xFFFFFF
-    candidate_text_color: 0x000000
-    comment_text_color: 0x888888
-    label_color: 0x888888
-    hilited_candidate_back_color: 0xCC8F29
-    hilited_candidate_text_color: 0xFFFFFF
-    hilited_comment_text_color: 0xFFFFFF
-    hilited_candidate_label_color: 0xEEDAB8
-    text_color: 0x000000
-    hilited_back_color: 0xFFFFFF
-    hilited_text_color: 0x000000
+#  win10:
+#    name: "WIN10"
+#    author: "Lufs X <i@isteed.cc>"
+#
+#    font_face: "LXGWWenKai-Regular, PingFangSC"
+#    font_point: 16.5
+#    label_font_face: "LXGWWenKai-Regular, PingFangSC"
+#    label_font_point: 12
+#
+#    candidate_list_layout: linear
+#    text_orientation: horizontal
+#    inline_preedit: true
+#
+#    corner_radius: 0
+#    hilited_corner_radius: -6
+#    border_height: 7
+#    border_width: 6
+#    spacing: 10
+#
+#    color_space: srgb
+#    back_color: 0xFFFFFF
+#    candidate_text_color: 0x000000
+#    comment_text_color: 0x888888
+#    label_color: 0x888888
+#    hilited_candidate_back_color: 0xCC8F29
+#    hilited_candidate_text_color: 0xFFFFFF
+#    hilited_comment_text_color: 0xFFFFFF
+#    hilited_candidate_label_color: 0xEEDAB8
+#    text_color: 0x000000
+#    hilited_back_color: 0xFFFFFF
+#    hilited_text_color: 0x000000
 
   win10_ayaya:
     name: "WIN10／文文／Ayaya"
@@ -660,6 +661,7 @@ preset_color_schemes:
 
   # 下面是内置的皮肤 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
 
+
   native:
     name: 系統配色
 
@@ -705,25 +707,6 @@ preset_color_schemes:
     hilited_candidate_label_color: 0xa0c98915
     hilited_candidate_text_color: 0xc98915
     hilited_candidate_back_color: 0xeeeeee
-
-  apathy:
-    name: 冷漠／Apathy
-    author: LIANG Hai
-    horizontal: true  # 水平排列
-    inline_preedit: true #单行显示，false双行显示
-    candidate_format: "%c\u2005%@\u2005"  # 编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 5  #候选条圆角
-    border_height: 0
-    border_width: 0
-    back_color: 0xFFFFFF  #候选条背景色
-    font_face: "PingFangSC-Regular,HanaMinB"  #候选词字体
-    font_point: 16  #候选字词大小
-    text_color: 0x424242  #高亮选中词颜色
-    label_font_face: "STHeitiSC-Light"   #候选词编号字体
-    label_font_point: 12   #候选编号大小
-    hilited_candidate_text_color: 0xEE6E00  #候选文字颜色
-    hilited_candidate_back_color: 0xFFF0E4  #候选文字背景色
-    comment_text_color: 0x999999  #拼音等提示文字颜色
 
   dust:
     name: 浮尘／Dust
@@ -1011,7 +994,7 @@ preset_color_schemes:
     hilited_corner_radius: 5                     # 高亮圆角
     line_spacing: 10                              # 行间距(适用于竖排)
     border_height: 4                             # 窗口上下高度，大于圆角半径才生效
-    border_width: 4                              # 窗口左右宽度，大于圆角半径才生效 
+    border_width: 4                              # 窗口左右宽度，大于圆角半径才生效
     font_face: "PingFangSC"                      # 候选词字体
     font_point: 16                               # 候选字大小
     label_font_point: 13                         # 候选编号大小
@@ -1100,11 +1083,11 @@ preset_color_schemes:
     name: 幽能
     horizontal: true              # true横排，false竖排
     candidate_format: "%c %@ "    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 5                             # 窗口圆角 
+    corner_radius: 5                             # 窗口圆角
     font_point: 16                               # 候选文字大小
     label_font_point: 14                         # 候选编号大小
     line_spacing: 10                              # 行间距(适用于竖排)
-    font_face: "PingFangSC-Regular,HanaMinB"     # 候选词字体  
+    font_face: "PingFangSC-Regular,HanaMinB"     # 候选词字体
     text_color: 0xc2c2c2                     # 拼音行文字颜色
     back_color: 0x444444                     # 候选条背景色，24位色值，16进制，BGR顺序
     candidate_text_color: 0xeeeeee           # 预选项文字颜色
@@ -1148,7 +1131,7 @@ preset_color_schemes:
     name: 日光石
     horizontal: true              # true横排，false竖排
     candidate_format: "%c %@ "    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 6                             # 窗口圆角 
+    corner_radius: 6                             # 窗口圆角
     font_point: 16                               # 候选文字大小
     label_font_point: 15                         # 候选编号大小
     line_spacing: 10                             # 行间距(适用于竖排)
@@ -1162,14 +1145,14 @@ preset_color_schemes:
     hilited_candidate_label_color: 0xfafafa  # 第一候选项编号颜色
     hilited_candidate_back_color: 0x8236d3   # 候选文字背景色
     hilited_candidate_text_color: 0xffffff   # 第一候选项文字颜色
-    hilited_comment_text_color: 0x362b00     # 注解文字高亮  
+    hilited_comment_text_color: 0x362b00     # 注解文字高亮
     color_space: display_p3 # Only available on macOS 10.12+
 
   solarized_dark:
     name: 夜光石
     horizontal: true              # true横排，false竖排
     candidate_format: "%c %@ "    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 6                             # 窗口圆角 
+    corner_radius: 6                             # 窗口圆角
     font_point: 16                               # 候选文字大小
     label_font_point: 15                         # 候选编号大小
     line_spacing: 10                             # 行间距(适用于竖排)
@@ -1185,7 +1168,7 @@ preset_color_schemes:
     hilited_candidate_label_color: 0x2566C6  # 第一候选项编号颜色
     hilited_candidate_back_color: 0xD7E8ED   # 候选文字背景色
     hilited_candidate_text_color: 0x3942CB   # 第一候选项文字颜色
-    hilited_comment_text_color: 0x8144C2     # 注解文字高亮         
+    hilited_comment_text_color: 0x8144C2     # 注解文字高亮
     color_space: display_p3 # Only available on macOS 10.12+
 
   # apathy:
@@ -1220,7 +1203,7 @@ preset_color_schemes:
     hilited_text_color: 0x000000             # 高亮拼音 (需要开启内嵌编码)
     hilited_back_color: 0xFFFFFF             # 第一候选项背景背景色
     hilited_candidate_text_color: 0xffffff   # 第一候选项文字颜色
-    hilited_candidate_back_color: 0xCE7539   # 候选文字背景色 
+    hilited_candidate_back_color: 0xCE7539   # 候选文字背景色
     comment_text_color: 0x6D6D6D             # 拼音等提示文字颜色
     hilited_comment_text_color: 0xEBC6B0     # 注解文字高亮
     hilited_candidate_label_color: 0xfafafa  # 第一候选项编号颜色
