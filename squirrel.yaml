@@ -16,7 +16,7 @@ config_version: '2023-02-27'
 # last：上次使用的拉丁字母键盘布局
 # default：美国（ABC）键盘布局
 # _custom_：键盘布局，例如 'com.apple.keylayout.USExtended' 或简写的 'USExtended'
-keyboard_layout: last
+keyboard_layout: default
 
 # 给打字贼快的家伙们设置的按键持续时间（
 chord_duration: 0.1 # seconds
@@ -88,7 +88,8 @@ app_options:
 
 style:
   # color_scheme: solarized # 主题方案
-  color_scheme: reimu
+  # color_scheme: reimu
+  color_scheme: wechat_light
   color_scheme_dark: reimu_dark # 指定深色模式时输入法所使用的主题方案
   translucency: true # 背景半透明总开关，不需要关掉即可
 
