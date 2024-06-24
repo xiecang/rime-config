@@ -1,6 +1,5 @@
 # Squirrel settings
 # encoding: utf-8
-# 修改自: https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
 #
 # squirrel[.custom].yaml 是鼠须管的前端配置文件，小狼毫是 weasel[.custom].yaml
 # 各平台皮肤配置并不一致。
