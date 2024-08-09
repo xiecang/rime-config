@@ -17,7 +17,6 @@ function M.init(env)
     M.week = config:get_string(env.name_space .. '/week') or 'xq'
     M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
     M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
-    M.bak = config:get_string(env.name_space .. '/bak') or 'bak'
 end
 
 function M.func(input, seg, env)
@@ -35,8 +34,6 @@ function M.func(input, seg, env)
         local current_time = os.time()
         yield_cand(seg, os.date('%H:%M', current_time))
         yield_cand(seg, os.date('%H:%M:%S', current_time))
-    -- timestamp
-        yield_cand(seg, string.format('%d', current_time))
 
     -- 星期
     elseif (input == M.week) then
@@ -58,11 +55,6 @@ function M.func(input, seg, env)
     elseif (input == M.timestamp) then
         local current_time = os.time()
         yield_cand(seg, string.format('%d', current_time))
-
-    -- bak 自动添加时间后缀
-    elseif (input == M.bak) then
-        local current_time = os.time()
-        yield_cand(seg, os.date('bak_%Y-%m-%d-%H-%M', current_time))
     end
 
     -- -- 显示内存
