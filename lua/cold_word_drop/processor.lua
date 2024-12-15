@@ -1,3 +1,11 @@
+-- 词条隐藏、降频
+-- 在 engine/processors 增加 - lua_processor@cold_word_drop.processor
+-- 在 engine/filters 增加 - lua_filter@cold_word_drop.filter
+-- 在 key_binder 增加快捷键：
+-- turn_down_cand: "Control+j"  # 匹配当前输入码后隐藏指定的候选字词 或候选词条放到第四候选位置
+-- drop_cand: "Control+d"       # 强制删词, 无视输入的编码
+-- get_record_filername() 函数中仅支持了 Windows、macOS、Linux
+
 require("cold_word_drop.string")
 require("cold_word_drop.metatable")
 local processor = {}
@@ -6,7 +14,7 @@ local function get_record_filername(record_type)
 	local path_sep = "/"
 	local user_data_dir = rime_api:get_user_data_dir()
 	local user_distribute_name = rime_api:get_distribution_code_name()
-	if user_distribute_name:lower():match("weasel") then path_sep = "\\" end
+	if user_distribute_name:lower():match("weasel") then path_sep = [[\]] end
 	if user_distribute_name:lower():match("ibus") then
 		return string.format("%s/rime/lua/cold_word_records/%s_words.lua",
 			os.getenv("HOME") .. "/.config/ibus",
