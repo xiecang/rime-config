@@ -8,19 +8,27 @@
 # 鼠须管界面配置指南： https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/鼠鬚管介面配置指南.md
 # 鼠须管作者写的图形化的皮肤设计器： https://github.com/LEOYoon-Tsaw/Squirrel-Designer
 
+# Squirrel 部分命令行选项：
+# squirrel="/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel"
+# --quit：退出所有 Squirrel 进程
+# --reload：重新部署
+# --sync：触发同步用户数据
+# --build：构建
+# --help：帮助输出帮助文本
+
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2024-11-04'  # config_version: '1.0'
+config_version: '2026-01-31'  # 对应的鼠须管版本: 1.1.2
 
 
-# 可用选项：last | default | _custom_
-# last：上次使用的拉丁字母键盘布局
-# default：美国（ABC）键盘布局
-# _custom_：键盘布局，例如 'com.apple.keylayout.USExtended' 或简写的 'USExtended'
+# 键盘布局  last | default | _custom_
+# last: 上次使用的英文键盘布局
+# default: US (ABC)
+# _custom_: 自定义，例如 'com.apple.keylayout.USExtended' 或者 'USExtended'
 keyboard_layout: last
-# for veteran chord-typist
-chord_duration: 0.1  # seconds
-# options: always | never | appropriate
+# 并击输入  秒
+chord_duration: 0.1
+# 何时显示通知  always | never | appropriate
 show_notifications_when: appropriate
 show_notifications_via_notification_center: true
 
